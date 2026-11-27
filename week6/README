@@ -1,61 +1,49 @@
-# Week 7 – GPT-2 Next Token Prediction
+# Week 6 – LLM Evaluation Using Golden Question Set
 
 ## Introduction
 
-In this experiment, we worked with the GPT-2 language model to understand how a Generative AI model predicts the next word or token in a sentence. We provided different text inputs to the model and observed how it selected the most probable next tokens.
+In this experiment, we worked on evaluating a Large Language Model using a set of predefined questions. We used the Llama 3.2 model through Ollama to generate answers for the given questions. A golden question set was prepared with questions, expected answers, keywords, and reference links. The main purpose of this experiment was to check how accurately the model responds to different questions.
 
-## Aim of the Experiment
+## Tools and Technologies
 
-The main aim of this experiment is to learn how next-token prediction works and understand how probabilities are calculated for different token choices.
-
-## Tools and Libraries
-
-The following tools and libraries were used:
 - Python
-- PyTorch
-- Hugging Face Transformers
-- GPT-2 Pretrained Model
+- Ollama
+- Llama 3.2
+- Visual Studio Code
+- JSON
+- CSV
+- Requests Library
 
-## Experiment Procedure
+## Experiment Description
 
-First, we created a Python file and imported the required libraries. After that, we loaded the pretrained GPT-2 model and its tokenizer using the Transformers library.
+First, we installed Ollama on our system and downloaded the Llama 3.2 model. Then we created a JSON file containing 30 questions related to the experiment. Each question included an expected answer and important keywords.
 
-We prepared a few sample sentences as input prompts. Each prompt was converted into token IDs using the tokenizer. The model processed these tokens and generated logits for predicting the next token.
+After preparing the dataset, we wrote a Python program to connect with the locally running Ollama model. The program sends each question to the model and collects its generated response.
 
-We then applied the softmax function to convert the logits into probability values. Using these probabilities, we selected the top five predicted tokens and displayed their rankings.
+We compared the generated answers with the expected keywords. Based on the number of matching keywords, the program calculated a score for every question. The responses were classified as PASS or REVIEW depending on their scores.
 
-Finally, we collected all the prediction details and saved them into a CSV file for further observation.
+## Execution Steps
 
-## Files Used
+1. Installed Ollama on the Windows system.
+2. Downloaded the Llama 3.2 model using the terminal.
+3. Created the `golden_set.json` file with 30 questions.
+4. Created the Python program in `main.py`.
+5. Installed the required Python package using `requirements.txt`.
+6. Executed the Python program through the VS Code terminal.
+7. Connected the program with the Ollama model.
+8. Generated answers and calculated keyword matching scores.
+9. Saved the evaluation results into a CSV file.
 
-1. `main.py` – Contains the complete Python implementation.
-2. `requirements.txt` – Contains the libraries needed for execution.
-3. `week7_probability_results.csv` – Stores the generated prediction results.
-4. `README.md` – Explains the experiment and execution process.
+## Output
 
-## Steps to Execute
-
-1. Open the project folder in VS Code.
-2. Open the terminal.
-3. Install the required packages using:
-
-   `pip install -r requirements.txt`
-
-4. Execute the Python program using:
-
-   `python main.py`
-
-5. Wait for the GPT-2 model to load and complete the predictions.
-6. Check the terminal for the output and open the generated CSV file.
-
-## Observations
-
-During this experiment, we observed that GPT-2 provides multiple possible next-token predictions for a given sentence. Each predicted token has a different probability value. The token with a higher probability is considered more likely according to the model.
+After running the program, a file named `baseline_results.csv` was generated automatically. It contains the questions, expected answers, generated answers, matched keywords, missing keywords, scores, and evaluation status.
 
 ## Result
 
-The experiment was successfully executed. We obtained the top five next-token predictions for each input prompt and stored their probability values in a CSV file.
+The experiment was completed successfully using the Llama 3.2 model. We learned how to prepare a golden question dataset, connect a local language model with Python, generate responses, and evaluate the answers using keyword-based scoring.
 
-## Learning Outcome
+## Conclusion
 
-Through this experiment, I learned how GPT-2 processes text inputs and predicts the next token. I also understood the basic use of tokenization, logits, softmax, and probability calculations in language models.
+Through this experiment, we understood the basic process of testing and evaluating an LLM. We also learned how to use Ollama, Python, JSON, and CSV together. This practical helped us understand how model responses can be checked and recorded for future improvements.
+
+**Release Version:** v0.1 – Initial Baseline Evaluation

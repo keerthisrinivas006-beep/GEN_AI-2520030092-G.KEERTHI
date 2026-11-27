@@ -1,0 +1,61 @@
+# Week 7 – GPT-2 Next Token Prediction
+
+## Introduction
+
+In this experiment, we worked with the GPT-2 language model to understand how a Generative AI model predicts the next word or token in a sentence. We provided different text inputs to the model and observed how it selected the most probable next tokens.
+
+## Aim of the Experiment
+
+The main aim of this experiment is to learn how next-token prediction works and understand how probabilities are calculated for different token choices.
+
+## Tools and Libraries
+
+The following tools and libraries were used:
+- Python
+- PyTorch
+- Hugging Face Transformers
+- GPT-2 Pretrained Model
+
+## Experiment Procedure
+
+First, we created a Python file and imported the required libraries. After that, we loaded the pretrained GPT-2 model and its tokenizer using the Transformers library.
+
+We prepared a few sample sentences as input prompts. Each prompt was converted into token IDs using the tokenizer. The model processed these tokens and generated logits for predicting the next token.
+
+We then applied the softmax function to convert the logits into probability values. Using these probabilities, we selected the top five predicted tokens and displayed their rankings.
+
+Finally, we collected all the prediction details and saved them into a CSV file for further observation.
+
+## Files Used
+
+1. `main.py` – Contains the complete Python implementation.
+2. `requirements.txt` – Contains the libraries needed for execution.
+3. `week7_probability_results.csv` – Stores the generated prediction results.
+4. `README.md` – Explains the experiment and execution process.
+
+## Steps to Execute
+
+1. Open the project folder in VS Code.
+2. Open the terminal.
+3. Install the required packages using:
+
+   `pip install -r requirements.txt`
+
+4. Execute the Python program using:
+
+   `python main.py`
+
+5. Wait for the GPT-2 model to load and complete the predictions.
+6. Check the terminal for the output and open the generated CSV file.
+
+## Observations
+
+During this experiment, we observed that GPT-2 provides multiple possible next-token predictions for a given sentence. Each predicted token has a different probability value. The token with a higher probability is considered more likely according to the model.
+
+## Result
+
+The experiment was successfully executed. We obtained the top five next-token predictions for each input prompt and stored their probability values in a CSV file.
+
+## Learning Outcome
+
+Through this experiment, I learned how GPT-2 processes text inputs and predicts the next token. I also understood the basic use of tokenization, logits, softmax, and probability calculations in language models.
